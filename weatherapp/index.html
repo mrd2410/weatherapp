@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Enhanced Weather App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <h1>Weather App</h1>
+        
+        <!-- Search Box -->
+        <div class="search-box">
+            <input type="text" id="city-input" placeholder="Enter city name">
+            <button id="search-button">Search</button>
+        </div>
+
+        <!-- Current Location Button -->
+        <div class="location-box">
+            <button id="current-location-button">Use Current Location</button>
+        </div>
+
+        <!-- Unit Toggle Button -->
+        <div class="unit-toggle-box">
+            <button id="unit-toggle-button">Switch to °F</button>
+        </div>
+
+        <!-- Loader -->
+        <div id="loader" class="loader" style="display: none;"></div>
+
+        <!-- Current Weather Result -->
+        <div id="weather-result" class="weather-result">
+            <!-- Current weather data will be displayed here -->
+        </div>
+
+        <!-- 5-Day Forecast -->
+        <div id="forecast" class="forecast">
+            <h2>5-Day Forecast</h2>
+            <div id="forecast-container" class="forecast-container">
+                <!-- Forecast cards will be dynamically added here -->
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

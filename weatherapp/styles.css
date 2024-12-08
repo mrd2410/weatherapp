@@ -1,0 +1,233 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #121313, #00f2fe);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.app-container {
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 20px 40px;
+    border-radius: 10px;
+    text-align: center;
+    width: 90%;
+    max-width: 1300px; /* Increased width to accommodate carousel */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden; /* Hide scrollbars */
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.search-box {
+    display: flex;
+    margin-bottom: 15px;
+}
+
+#city-input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    font-size: 16px;
+}
+
+#search-button {
+    padding: 10px;
+    border: none;
+    background-color: #0d0d0e;
+    color: white;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#search-button:hover {
+    background-color: #090a0a;
+}
+
+.location-box {
+    margin-bottom: 15px;
+}
+
+#current-location-button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #0d0d0d;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#current-location-button:hover {
+    background-color: #0b0b0c;
+}
+
+.unit-toggle-box {
+    margin-bottom: 20px;
+}
+
+#unit-toggle-button {
+    padding: 8px 16px;
+    border: none;
+    background-color: #070707;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+#unit-toggle-button:hover {
+    background-color: #0b0b0b;
+}
+
+.weather-result {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.weather-result h2 {
+    margin-bottom: 10px;
+    color: #333;
+    vertical-align: middle;
+}
+
+
+.weather-result p {
+    margin: 5px 0;
+    color: #333;
+    font-size: 16px;
+}
+
+.loader {
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #4facfe;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* 5-Day Forecast Styling */
+.forecast {
+    margin-top: 30px;
+    vertical-align: middle;
+}
+
+.forecast h2 {
+    margin-bottom: 15px;
+    color: #333;
+    vertical-align: middle;
+}
+
+.forecast-container {
+    display: flex;
+    /* Arrange items horizontally */
+    flex-direction: row;
+    /* Enable horizontal scrolling */
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    /* Hide scrollbar */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* IE and Edge */
+    
+}
+
+.forecast-container::-webkit-scrollbar {
+    display: none; /* Chrome, Safari and Opera */
+}
+
+.forecast-card {
+    background-color: rgba(244, 238, 238, 0.85);
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    margin-right: 90px;
+    min-width: 150px; /* Fixed width for uniformity */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0; /* Prevent shrinking */
+    transition: transform 0.3s;
+    vertical-align: middle;
+    
+}
+
+.forecast-card:hover {
+    transform: scale(1.05);
+}
+
+.forecast-card h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.forecast-card img {
+    width: 50px;
+    height: 50px;
+}
+
+.forecast-card p {
+    font-size: 14px;
+    color: #555;
+    margin: 5px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .app-container {
+        width: 95%;
+        padding: 15px 20px;
+    }
+
+    #city-input, #search-button, #current-location-button, #unit-toggle-button {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .weather-result p {
+        font-size: 14px;
+    }
+
+    .weather-result h2 {
+        font-size: 20px;
+        vertical-align: middle;
+    }
+
+    .forecast-container {
+        flex-direction: row;
+    }
+
+    .forecast-card {
+        min-width: 120px;
+    }
+}
+
+/* Auto-Scroll Animation */
+@keyframes scrollLeftToRight {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
